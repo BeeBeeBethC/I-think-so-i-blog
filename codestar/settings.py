@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-_czv980m)nzj_u3tpjv#&a4%937#=^0)yihz*gh*(t&5@t=)ku'
+SECRET_KEY = os.environ.get.setdefault("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-beebeebethc-ithinksoibl-4gzrqlqqrw5.ws.codeinstitute-ide.net',
 '.herokuapp.com',
@@ -86,8 +86,7 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 #    }
 #}
 DATABASES = {
-    'default':
-    dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 }
 
 # Password validation
